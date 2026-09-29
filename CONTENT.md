@@ -4,15 +4,32 @@ I am currently a student at Michigan State University, majoring in Computer Scie
 
 In my personal time, I like to work on my personal computer, play video games, and watch movies
 
-My past work experiences include Edward Rose & Sons as an IT intern, and Multimatic as a Business Applications/IT Intern. Through these internships, I have learned procedural ticketing systems, as well as techincal problem solving and communcations in and outside the company
+My past work experiences include Culver's, Edward Rose & Sons as an IT intern, and Multimatic as a Business Applications/IT Intern. Through these internships, I have learned procedural ticketing systems, as well as techincal problem solving and communcations in and outside the company
 
 ## Work Experience
-### Culver's Restaurant
+### Culver's Restaurant - Summer 2024
 While working at Culver's, I learned customer skills, as well as working under pressure with strict deadlines
-### Edward Rose & Sons
+### Edward Rose & Sons - Summer 2025
 At Edward Rose & Sons, I worked as a part of a large IT team, doing everything from hardware deployments and disposal, as well as taking phone calls
-### Multimatic
+### Multimatic - Summer 2026
 With Multimatic, I was part of a much smaller Business Applications team, and I spearheaded multiple projects, involving a revamp of our internal IT website, and a hardware recycling program from the ground up
+
+## Technical Skills
+- SharePoint
+- Microsoft Fabric
+- Microsoft Power Automate
+- Microsoft Power BI
+- Customer Service
+- Hardware Support
+- Software Support
+
+## Programming Languages
+- Python
+- C++
+- HTML
+- C#
+- C
+
 ## Contact
 Dalton McLaughlin
 daltonfmclaughlin@gmail.com
