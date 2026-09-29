@@ -4,7 +4,7 @@ I am currently a student at Michigan State University, majoring in Computer Scie
 
 In my personal time, I like to work on my personal computer, play video games, and watch movies
 
-My past work experiences include Edward Rose & Sons as an IT intern, and Multimatic as a Business Applications/IT Intern. Through this internships, I have learned procedural ticketing systems, as well as techincal problem solving and communcations in and outside the company
+My past work experiences include Edward Rose & Sons as an IT intern, and Multimatic as a Business Applications/IT Intern. Through these internships, I have learned procedural ticketing systems, as well as techincal problem solving and communcations in and outside the company
 
 ## Projects
 ### Project 1
