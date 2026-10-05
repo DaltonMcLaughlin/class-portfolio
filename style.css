@@ -2,130 +2,170 @@
     --primary-bg: #14181c;
     --primary-text: #ebebeb;
     --standard-gap: 40px;
+    --accent-color: #64d8cb;
+    --bar-bg: #070808;
 }
 
-
 body {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
     margin: 0;
     font-family: "Montserrat", sans-serif;
     background: var(--primary-bg);
     color: var(--primary-text);
+    line-height: 1.6;
 }
 
-main {
-    display: flex;
-    flex-direction: column;
-    flex: 1;
-}
-
-.tagline {
-    text-align: center;
-    margin: var(--standard-gap);
-}
-
-#about,
-#work-experience{
-    margin: var(--standard-gap);
-}
-
-#work-experience article {
-    margin: var(--standard-gap);
-}
-
-/**
-* List of skills/languages lists
-**/
-.skill-lists {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: var(--standard-gap);
-    margin: var(--standard-gap);
-}
-
-.skill-lists h2 {
-    margin-top: 0;
-    text-align: center;
-}
-
-.skill-lists ul {
-    padding: 0;
-    list-style: none;
-    text-align: center;
-}
-
-.skill-lists li {
-    padding: 0.5rem 0;
-}
-
-@media (max-width: 700px) {
-    .skill-lists {
-        grid-template-columns: 1fr;
-    }
-}
-
-/**
-* Navigation bar styling
-**/
-nav {
-    display: grid;
-    grid-template-columns: 1fr auto 1fr;
-    align-items: center;
-    background: #070808;
+header {
     padding: 0.75rem 1rem;
-    font-family: Century Gothic, CenturyGothic, AppleGothic, sans-serif;
+    background: var(--bar-bg);
+    text-align: center;
 }
 
-nav .header-logo {
+header h1 {
     margin: 0;
-    justify-self: start;
+    font-size: 1.5rem;
+}
+
+header picture {
+    margin-right: 0.5rem;
+}
+
+header img {
+    width: 120px;
+    height: auto;
+    vertical-align: middle;
 }
 
 nav ul {
-    display: flex;
-    grid-column: 2;
-    flex-wrap: wrap;
-    gap: var(--standard-gap);
-    justify-content: center;
+    margin: 0.5rem 0 0;
+    padding: 0;
     list-style: none;
-    margin: 0;
+}
+
+nav li {
+    display: inline-block;
+    margin: 0.35rem 0.6rem;
 }
 
 nav a {
     color: var(--primary-text);
-    font-size: 1.5em;
+    font-size: 1.1rem;
     font-weight: bold;
     text-decoration: none;
 }
 
 nav a:hover {
-    color: #64d8cb;
+    color: var(--accent-color);
+}
+
+main {
+    padding-bottom: 1rem;
+}
+
+.tagline {
+    text-align: center;
+    margin: var(--standard-gap);
+    color: var(--accent-color);
+    font-size: 1.4rem;
+    line-height: 1.5;
+}
+
+#about {
+    margin: var(--standard-gap);
+}
+
+#about h2 {
+    margin-bottom: 1rem;
+    color: var(--accent-color);
+}
+
+#about p {
+    max-width: 70rem;
+    line-height: 1.7;
+}
+
+#work-experience {
+    margin: var(--standard-gap);
+}
+
+#work-experience > h2 {
+    color: var(--accent-color);
+}
+
+#work-experience article {
+    margin: var(--standard-gap) 0;
+}
+
+#work-experience h3 {
+    margin-bottom: 0.5rem;
+    color: var(--accent-color);
+}
+
+#work-experience article p {
+    margin-top: 0.5rem;
+    line-height: 1.7;
+}
+
+#technical-skills,
+#curriculum-skills,
+#programming-languages {
+    display: inline-block;
+    width: 30%;
+    margin: var(--standard-gap) 1%;
+    box-sizing: border-box;
+    vertical-align: top;
+}
+
+#technical-skills h2,
+#curriculum-skills h2,
+#programming-languages h2 {
+    text-align: center;
+    color: var(--accent-color);
+}
+
+#technical-skills ul,
+#curriculum-skills ul,
+#programming-languages ul {
+    padding: 0;
+    list-style: none;
+    text-align: center;
+}
+
+#technical-skills li,
+#curriculum-skills li,
+#programming-languages li {
+    padding: 0.5rem 0;
+    border-bottom: 1px solid rgba(235, 235, 235, 0.2);
+}
+
+@media (max-width: 700px) {
+    #technical-skills,
+    #curriculum-skills,
+    #programming-languages {
+        display: block;
+        width: auto;
+        margin: var(--standard-gap);
+    }
 }
 
 #contact {
-    margin-top: auto;
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
-    gap: 1rem 2rem;
+    margin-top: var(--standard-gap);
     padding: 0.75rem 1rem;
-    background: #070808;
+    background: var(--bar-bg);
+    text-align: center;
 }
 
-#contact h2,
-#contact address p {
-    margin: 0;
+#contact h2 {
+    margin: 0 0 0.5rem;
+    color: var(--accent-color);
 }
 
 #contact address {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 1rem 2rem;
     font-style: normal;
+}
+
+#contact address p {
+    display: inline-block;
+    margin: 0.25rem 0.75rem;
 }
 
 #contact a {
@@ -135,5 +175,16 @@ nav a:hover {
 }
 
 #contact a:hover {
-    color: #64d8cb;
+    color: var(--accent-color);
+}
+
+footer {
+    padding: 0.4rem 1rem;
+    background: var(--bar-bg);
+    font-size: 0.8rem;
+    text-align: center;
+}
+
+footer p {
+    margin: 0;
 }
