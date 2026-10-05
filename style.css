@@ -26,8 +26,44 @@ main {
     margin: var(--standard-gap);
 }
 
+#about,
+#work-experience{
+    margin: var(--standard-gap);
+}
+
 #work-experience article {
     margin: var(--standard-gap);
+}
+
+/**
+* List of skills/languages lists
+**/
+.skill-lists {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: var(--standard-gap);
+    margin: var(--standard-gap);
+}
+
+.skill-lists h2 {
+    margin-top: 0;
+    text-align: center;
+}
+
+.skill-lists ul {
+    padding: 0;
+    list-style: none;
+    text-align: center;
+}
+
+.skill-lists li {
+    padding: 0.5rem 0;
+}
+
+@media (max-width: 700px) {
+    .skill-lists {
+        grid-template-columns: 1fr;
+    }
 }
 
 /**
