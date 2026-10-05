@@ -14,6 +14,18 @@ body {
     margin: var(--standard-gap);
 }
 
-nav {
-    background: yellow;
+nav ul {
+    display: flex;
+    gap: var(--standard-gap);
+    justify-content: center;
+    list-style: none;
+}
+
+nav a {
+    color: var(--primary-text);
+    text-decoration: none;
+}
+
+nav a:hover {
+    color: #64d8cb;
 }
