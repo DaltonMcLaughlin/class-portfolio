@@ -113,13 +113,18 @@ main {
     margin: var(--standard-gap) 1%;
     box-sizing: border-box;
     vertical-align: top;
+    padding: 1rem;
+    border-radius: 12px;
+    background: var(--primary-text);
+    color: var(--primary-bg);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.3);
 }
 
 #technical-skills h2,
 #curriculum-skills h2,
 #programming-languages h2 {
     text-align: center;
-    color: var(--accent-color);
+    color: var(--primary-bg);
 }
 
 #technical-skills ul,
@@ -134,7 +139,7 @@ main {
 #curriculum-skills li,
 #programming-languages li {
     padding: 0.5rem 0;
-    border-bottom: 1px solid rgba(235, 235, 235, 0.2);
+    border-bottom: 1px solid rgba(20, 24, 28, 0.2);
 }
 
 @media (max-width: 700px) {
