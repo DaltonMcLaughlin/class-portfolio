@@ -142,16 +142,6 @@ main {
     border-bottom: 1px solid rgba(20, 24, 28, 0.2);
 }
 
-@media (max-width: 700px) {
-    #technical-skills,
-    #curriculum-skills,
-    #programming-languages {
-        display: block;
-        width: auto;
-        margin: var(--standard-gap);
-    }
-}
-
 #contact {
     margin-top: var(--standard-gap);
     padding: 0.75rem 1rem;
