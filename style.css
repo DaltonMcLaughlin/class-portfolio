@@ -33,6 +33,12 @@ header img {
     width: 120px;
     height: auto;
     vertical-align: middle;
+    transition: transform 0.2s ease;
+}
+
+header .header-logo a:hover img,
+header .header-logo a:focus-visible img {
+    transform: scale(1.08);
 }
 
 nav ul {
@@ -89,10 +95,11 @@ main {
 
 #work-experience > h2 {
     color: var(--accent-color);
+    grid-column: 1 / -1;
 }
 
 #work-experience article {
-    margin: var(--standard-gap) 0;
+    margin: 0;
 }
 
 #work-experience h3 {
@@ -105,41 +112,41 @@ main {
     line-height: 1.7;
 }
 
-#technical-skills,
-#curriculum-skills,
-#programming-languages {
-    display: inline-block;
-    width: 30%;
-    margin: var(--standard-gap) 1%;
-    box-sizing: border-box;
-    vertical-align: top;
+#work-experience {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(100px, auto));
+    grid-template-rows: 1fr;
+    gap: 1em;
+}
+
+@media (min-width: 600px) {
+    #work-experience {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(100px, auto));
+        grid-template-rows: 1fr;
+        gap: 1em;
+    }
+}
+
+#skills {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+#skills > section {
+    flex: 1 1 250px;
+    min-width: min(100%, 250px);
+    text-align: center;
     padding: 1rem;
     border-radius: 12px;
     background: var(--primary-text);
     color: var(--primary-bg);
-    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.3);
 }
 
-#technical-skills h2,
-#curriculum-skills h2,
-#programming-languages h2 {
-    text-align: center;
-    color: var(--primary-bg);
-}
-
-#technical-skills ul,
-#curriculum-skills ul,
-#programming-languages ul {
-    padding: 0;
+#skills ul {
     list-style: none;
-    text-align: center;
-}
-
-#technical-skills li,
-#curriculum-skills li,
-#programming-languages li {
-    padding: 0.5rem 0;
-    border-bottom: 1px solid rgba(20, 24, 28, 0.2);
+    padding: 0;
 }
 
 #contact {
