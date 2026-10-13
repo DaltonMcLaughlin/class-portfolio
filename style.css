@@ -131,6 +131,7 @@ main {
     display: flex;
     gap: 1rem;
     flex-wrap: wrap;
+    margin: var(--standard-gap);
 }
 
 #skills > section {
