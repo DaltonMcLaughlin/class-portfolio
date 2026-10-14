@@ -5,6 +5,7 @@
     --standard-gap: 40px;
     --accent-color: #84fff1;
     --secondary-bg: #070808;
+    --tertiary-bg: #1a1e22;
 }
 
 /* The whole page: default typography, background, text color, and line spacing. */
@@ -119,11 +120,11 @@ main > section:first-child {
     object-position: bottom;
 }
 
-/* Enlarge the opening hero area and tagline from 450px wide. */
+/* Expand the hero and remove skill-card padding from 450px wide. */
 @media (min-width: 450px) {
     main > section:first-child {
         min-height: 25svh;
-        --tagline-image-height: 23.75svh;
+        --tagline-image-height: 25.75svh;
     }
 
     .tagline {
@@ -140,8 +141,10 @@ main > section:first-child {
 
 /* The About section containing its heading and biography paragraphs. */
 #about {
-    margin-block: var(--standard-gap);
-    margin-inline: 0.5rem;
+    margin-block: 0;
+    padding-block: 1.28rem;
+    padding-inline: 0.5rem;
+    background: var(--tertiary-bg);
 }
 
 /* The About section heading. */
@@ -161,7 +164,7 @@ main > section:first-child {
     display: grid;
     grid-template-columns: minmax(0, 1fr);
     gap: 1em;
-    margin-block: var(--standard-gap);
+    margin-block: 1.28rem;
     margin-inline: 0.5rem;
 }
 
@@ -188,16 +191,24 @@ main > section:first-child {
     line-height: 1.7;
 }
 
-/* Display the Work Experience entries in three columns on wider screens. */
+/* At 600px, expand Work Experience, section spacing, and hero sizing. */
 @media (min-width: 600px) {
     #work-experience {
         grid-template-columns: repeat(3, minmax(0, 1fr));
+        margin-block: 1.92rem;
     }
     .tagline,
-    #about,
-    #work-experience,
-    #skills {
+    #work-experience {
         margin-inline: 1rem;
+    }
+
+    #about,
+    #skills {
+        padding-inline: 1rem;
+    }
+
+    #about {
+        padding-block: 1.92rem;
     }
 
     main > section:first-child {
@@ -233,8 +244,10 @@ main > section:first-child {
     display: grid;
     grid-template-columns: minmax(0, 1fr);
     gap: 1.5rem;
-    margin-block: var(--standard-gap);
-    margin-inline: 0.5rem;
+    margin-block: 0;
+    padding-block: var(--standard-gap);
+    padding-inline: 0.5rem;
+    background: var(--tertiary-bg);
 }
 
 
@@ -248,19 +261,29 @@ main > section:first-child {
     color: var(--primary-text);
 }
 
-/* The heading at the top of each skill-list card. */
+/* Scale card titles and skill lists together based on each card's width. */
+#skills > section h2,
+#skills ul {
+    font-size: clamp(0.65rem, 5cqi, 1.25rem);
+}
+
+/* Keep each skill-card title on one line. */
 #skills > section h2 {
-    font-size: clamp(1.5rem, 5cqi, 2rem);
+    white-space: nowrap;
 }
 
 /* The list of skills inside each skill-list card. */
 #skills ul {
     list-style: none;
     padding: 0;
-    font-size: clamp(0.875rem, 5cqi, 1.5rem);
 }
 
-/* Keep skill cards narrower and centered from 525px wide. */
+/* Keep each skill entry on one line at the same size as its card heading. */
+#skills li {
+    white-space: nowrap;
+}
+
+/* Narrow and center skill cards from 400px wide. */
 @media (min-width: 400px) {
     #skills > section {
         box-sizing: border-box;
@@ -283,7 +306,7 @@ main > section:first-child {
 
 /* The contact area with email and LinkedIn details. */
 #contact {
-    margin-top: var(--standard-gap);
+    margin-top: 0;
     padding: 0.75rem 1rem;
     background: var(--secondary-bg);
     text-align: center;
