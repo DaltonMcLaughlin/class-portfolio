@@ -1,11 +1,10 @@
 /* Shared colors and spacing used throughout the page. */
 :root {
     --primary-bg: #14181c;
-    --secondary-bg: #1c1f22;
     --primary-text: #ebebeb;
     --standard-gap: 40px;
     --accent-color: #84fff1;
-    --bar-bg: #070808;
+    --secondary-bg: #070808;
 }
 
 /* The whole page: default typography, background, text color, and line spacing. */
@@ -20,7 +19,7 @@ body {
 /* The top banner containing the logo and navigation. */
 header {
     padding: 0.75rem 1rem;
-    background: var(--bar-bg);
+    background: var(--secondary-bg);
     text-align: center;
 }
 
@@ -80,14 +79,63 @@ main {
     padding-bottom: 1rem;
 }
 
+/* The opening hero area beneath the banner. */
+main > section:first-child {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: end;
+    column-gap: 0.5rem;
+    min-height: 15svh;
+    --tagline-image-height: 14.25svh;
+}
+
 /* The introductory student tagline. */
 .tagline {
-    text-align: center;
-    margin-block: var(--standard-gap);
+    text-align: left;
+    margin-block-start: 0.25rem;
+    margin-block-end: 1rem;
     margin-inline: 0.5rem;
     color: var(--accent-color);
-    font-size: clamp(1.1rem, 4vw, 1.4rem);
-    line-height: 1.5;
+    font-size: 1.2rem;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+/* The headshot beside the tagline, aligned with the hero section's bottom. 
+ *
+ * AI Prompt: "Update only the CSS for the existing tagline section. Do not edit index.html or make any HTML changes. The tagline and the img.tagline-image element are already in the  * section.
+ *
+ * Make the tagline text left-aligned on the left, with the headshot to its right. Align the bottom of the image with the bottom edge of the tagline section, and size the image to     * about 75% of the section’s height while preserving its aspect ratio.
+ * 
+ * Use the existing media-query breakpoints. Make the tagline font about 20% smaller at each successive breakpoint, while keeping the layout readable and preventing text or image overflow on narrow screens. Preserve the hero section’s existing height settings and the rest of the page’s styles."
+*/
+.tagline-image {
+    align-self: end;
+    display: block;
+    width: auto;
+    height: var(--tagline-image-height);
+    max-width: 40vw;
+    object-fit: contain;
+    object-position: bottom;
+}
+
+/* Enlarge the opening hero area and tagline from 450px wide. */
+@media (min-width: 450px) {
+    main > section:first-child {
+        min-height: 25svh;
+        --tagline-image-height: 23.75svh;
+    }
+
+    .tagline {
+        margin-block-start: 0.5rem;
+        margin-block-end: 1.25rem;
+        margin-inline: 0.75rem;
+        font-size: 1.4rem;
+    }
+
+    #skills > section {
+        padding: 0rem;
+    }
 }
 
 /* The About section containing its heading and biography paragraphs. */
@@ -145,16 +193,50 @@ main {
     #work-experience {
         grid-template-columns: repeat(3, minmax(0, 1fr));
     }
+    .tagline,
+    #about,
+    #work-experience,
+    #skills {
+        margin-inline: 1rem;
+    }
+
+    main > section:first-child {
+        min-height: 35svh;
+        --tagline-image-height: 33.25svh;
+    }
+
+    .tagline {
+        margin-block-start: 0.75rem;
+        margin-block-end: 1.5rem;
+        margin-inline: 1.5rem;
+        font-size: 1.8rem;
+    }
+}
+
+/* Give the opening hero area and tagline more space on wide screens. */
+@media (min-width: 1000px) {
+    main > section:first-child {
+        min-height: 50svh;
+        --tagline-image-height: 47.5svh;
+    }
+
+    .tagline {
+        margin-block-start: 1rem;
+        margin-block-end: 2rem;
+        margin-inline: 2rem;
+        font-size: 2.6rem;
+    }
 }
 
 /* The Skills area containing the three skill-list sections. */
 #skills {
     display: grid;
     grid-template-columns: minmax(0, 1fr);
-    gap: 1rem;
+    gap: 1.5rem;
     margin-block: var(--standard-gap);
     margin-inline: 0.5rem;
 }
+
 
 /* Each skill-list card, including its heading and list. */
 #skills > section {
@@ -162,8 +244,8 @@ main {
     text-align: center;
     padding: 1rem;
     border-radius: 12px;
-    background: var(--primary-text);
-    color: var(--primary-bg);
+    background: var(--secondary-bg);
+    color: var(--primary-text);
 }
 
 /* The heading at the top of each skill-list card. */
@@ -178,10 +260,24 @@ main {
     font-size: clamp(0.875rem, 5cqi, 1.5rem);
 }
 
-/* Display the three skill-list cards in columns on wide screens. */
-@media (min-width: 1000px) {
+/* Keep skill cards narrower and centered from 525px wide. */
+@media (min-width: 400px) {
+    #skills > section {
+        box-sizing: border-box;
+        width: 100%;
+        max-width: 85%;
+        justify-self: center;
+    }
+}
+
+/* Display the three skill-list cards in columns from 825px wide. */
+@media (min-width: 825px) {
     #skills {
         grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    #skills > section {
+        max-width: none;
     }
 }
 
@@ -189,7 +285,7 @@ main {
 #contact {
     margin-top: var(--standard-gap);
     padding: 0.75rem 1rem;
-    background: var(--bar-bg);
+    background: var(--secondary-bg);
     text-align: center;
 }
 
@@ -225,7 +321,7 @@ main {
 /* The page footer, if a footer element is included in the HTML. */
 footer {
     padding: 0.4rem 1rem;
-    background: var(--bar-bg);
+    background: var(--secondary-bg);
     font-size: 0.8rem;
     text-align: center;
 }
