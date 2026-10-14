@@ -1,11 +1,14 @@
+/* Shared colors and spacing used throughout the page. */
 :root {
     --primary-bg: #14181c;
+    --secondary-bg: #1c1f22;
     --primary-text: #ebebeb;
     --standard-gap: 40px;
     --accent-color: #84fff1;
     --bar-bg: #070808;
 }
 
+/* The whole page: default typography, background, text color, and line spacing. */
 body {
     margin: 0;
     font-family: "Montserrat", sans-serif;
@@ -14,21 +17,25 @@ body {
     line-height: 1.6;
 }
 
+/* The top banner containing the logo and navigation. */
 header {
     padding: 0.75rem 1rem;
     background: var(--bar-bg);
     text-align: center;
 }
 
+/* The banner's main heading, which contains the linked logo. */
 header h1 {
     margin: 0;
     font-size: 1.5rem;
 }
 
+/* Space beside any picture placed inside the banner. */
 header picture {
     margin-right: 0.5rem;
 }
 
+/* The logo image in the banner. */
 header img {
     width: 120px;
     height: auto;
@@ -36,22 +43,26 @@ header img {
     transition: transform 0.2s ease;
 }
 
+/* Enlarge the linked banner logo when hovered or keyboard-focused. */
 header .header-logo a:hover img,
 header .header-logo a:focus-visible img {
     transform: scale(1.08);
 }
 
+/* The navigation link list below the logo. */
 nav ul {
     margin: 0.5rem 0 0;
     padding: 0;
     list-style: none;
 }
 
+/* Each navigation list item. */
 nav li {
     display: inline-block;
     margin: 0.35rem 0.6rem;
 }
 
+/* The links in the navigation menu. */
 nav a {
     color: var(--primary-text);
     font-size: 1.1rem;
@@ -59,84 +70,95 @@ nav a {
     text-decoration: none;
 }
 
+/* Change navigation link color on hover. */
 nav a:hover {
     color: var(--accent-color);
 }
 
+/* The main page content below the banner. */
 main {
     padding-bottom: 1rem;
 }
 
+/* The introductory student tagline. */
 .tagline {
     text-align: center;
-    margin: var(--standard-gap);
+    margin-block: var(--standard-gap);
+    margin-inline: 0.5rem;
     color: var(--accent-color);
-    font-size: 1.4rem;
+    font-size: clamp(1.1rem, 4vw, 1.4rem);
     line-height: 1.5;
 }
 
+/* The About section containing its heading and biography paragraphs. */
 #about {
-    margin: var(--standard-gap);
+    margin-block: var(--standard-gap);
+    margin-inline: 0.5rem;
 }
 
+/* The About section heading. */
 #about h2 {
     margin-bottom: 1rem;
     color: var(--accent-color);
 }
 
+/* The biography paragraphs in the About section. */
 #about p {
     max-width: 70rem;
     line-height: 1.7;
 }
 
+/* The Work Experience section and its job entries. */
 #work-experience {
     display: grid;
     grid-template-columns: minmax(0, 1fr);
     gap: 1em;
-    margin: var(--standard-gap);
+    margin-block: var(--standard-gap);
+    margin-inline: 0.5rem;
 }
 
+/* The Work Experience section heading, spanning all grid columns. */
 #work-experience > h2 {
     color: var(--accent-color);
     grid-column: 1 / -1;
 }
 
+/* Each job entry in the Work Experience section. */
 #work-experience article {
     margin: 0;
 }
 
+/* The employer and date heading within each job entry. */
 #work-experience h3 {
     margin-bottom: 0.5rem;
     color: var(--accent-color);
 }
 
+/* The description paragraph within each job entry. */
 #work-experience article p {
     margin-top: 0.5rem;
     line-height: 1.7;
 }
 
+/* Display the Work Experience entries in three columns on wider screens. */
 @media (min-width: 600px) {
-    #work-experience {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-}
-
-@media (min-width: 1000px) {
     #work-experience {
         grid-template-columns: repeat(3, minmax(0, 1fr));
     }
 }
 
+/* The Skills area containing the three skill-list sections. */
 #skills {
-    display: flex;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
     gap: 1rem;
-    flex-wrap: wrap;
-    margin: var(--standard-gap);
+    margin-block: var(--standard-gap);
+    margin-inline: 0.5rem;
 }
 
+/* Each skill-list card, including its heading and list. */
 #skills > section {
-    flex: 1 1 250px;
-    min-width: min(100%, 250px);
+    container-type: inline-size;
     text-align: center;
     padding: 1rem;
     border-radius: 12px;
@@ -144,11 +166,26 @@ main {
     color: var(--primary-bg);
 }
 
+/* The heading at the top of each skill-list card. */
+#skills > section h2 {
+    font-size: clamp(1.5rem, 5cqi, 2rem);
+}
+
+/* The list of skills inside each skill-list card. */
 #skills ul {
     list-style: none;
     padding: 0;
+    font-size: clamp(0.875rem, 5cqi, 1.5rem);
 }
 
+/* Display the three skill-list cards in columns on wide screens. */
+@media (min-width: 1000px) {
+    #skills {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+}
+
+/* The contact area with email and LinkedIn details. */
 #contact {
     margin-top: var(--standard-gap);
     padding: 0.75rem 1rem;
@@ -156,30 +193,36 @@ main {
     text-align: center;
 }
 
+/* The heading inside the contact area, when present. */
 #contact h2 {
     margin: 0 0 0.5rem;
     color: var(--accent-color);
 }
 
+/* The contact details container, which groups the links. */
 #contact address {
     font-style: normal;
 }
 
+/* Each paragraph containing a contact link or social profile. */
 #contact address p {
     display: inline-block;
     margin: 0.25rem 0.75rem;
 }
 
+/* Links to email and social profiles in the contact area. */
 #contact a {
     color: var(--primary-text);
     font-weight: bold;
     text-decoration: none;
 }
 
+/* Change contact link color on hover. */
 #contact a:hover {
     color: var(--accent-color);
 }
 
+/* The page footer, if a footer element is included in the HTML. */
 footer {
     padding: 0.4rem 1rem;
     background: var(--bar-bg);
@@ -187,6 +230,7 @@ footer {
     text-align: center;
 }
 
+/* A paragraph inside the page footer, if present. */
 footer p {
     margin: 0;
 }
