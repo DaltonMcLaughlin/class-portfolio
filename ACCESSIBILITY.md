@@ -25,3 +25,6 @@
 - Best Practices: None
 - SEO: Document does not have a meta description
 - Agentic Browsing: None
+
+# Fixes
+- Found that my links were too dark on my background, so I changed them to be lighter
