@@ -159,6 +159,7 @@ main > section:first-child {
     line-height: 1.7;
 }
 
+
 /* The Work Experience section and its job entries. */
 #work-experience {
     display: grid;
@@ -352,4 +353,19 @@ footer {
 /* A paragraph inside the page footer, if present. */
 footer p {
     margin: 0;
+}
+
+/* Change color of links to companies */
+.company-link {
+    color: #1eaaeb;
+}
+/* Change color of links to companies after they have been visited */
+.company-link:visited {
+    color: #007ab3;
+}
+
+/* Change color of links to companies while hovering*/
+.company-link:hover,
+.company-link:focus-visible {
+    color: #99faff;
 }
