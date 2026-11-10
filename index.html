@@ -10,14 +10,28 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    <link rel="icon" type="image/png" href="images/DM%20Logo%20(White).png">
     <title>Dalton McLaughlin</title>
-    <script src="utilities.js"></script>
+    <script src="utilities.js" defer></script>
 </head>
 <body>
     <header>
         <nav>
-            <h1 class="header-logo"><a href="#"><img src="images/DM%20Logo%20(White).png" alt="Dalton McLaughlin logo" width="150"></a></h1>
+            <h1 class="header-logo">
+                <a href="#">
+                    <img
+                        class="dark-logo"
+                        src="images/White%20Logo.png"
+                        alt="Dalton McLaughlin logo"
+                        width="150"
+                    >
+                    <img
+                        class="light-logo"
+                        src="images/Black%20Logo.png"
+                        alt="Dalton McLaughlin logo"
+                        width="150"
+                    >
+                </a>
+            </h1>
             <ul>
                 <li><a href="#about">About</a></li>
                 <li><a href="#work-experience">Work Experience</a></li>
@@ -25,6 +39,12 @@
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
+        <label class="theme-toggle" for="theme-toggle">
+            <input id="theme-toggle" type="checkbox">
+            <img class="dark-mode-icon" src="images/Custom_Dark_mode_icon.png" alt="">
+            <img class="light-mode-icon" src="images/Custom_Light_mode_icon.png" alt="">
+            <span class="visually-hidden">Light mode</span>
+        </label>
     </header>
     <main>
         <section>

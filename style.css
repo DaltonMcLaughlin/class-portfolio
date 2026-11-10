@@ -6,6 +6,22 @@
     --accent-color: #84fff1;
     --secondary-bg: #070808;
     --tertiary-bg: #1a1e22;
+    --company-link-color: #1eaaeb;
+    --company-link-visited-color: #007ab3;
+    --company-link-hover-color: #99faff;
+    color-scheme: dark;
+}
+
+:root:has(#theme-toggle:checked) {
+    --primary-bg: #F8FAFC;
+    --primary-text: #20252b;
+    --accent-color: #269bc9;
+    --secondary-bg: #e2e7ec;
+    --tertiary-bg: #ffffff;
+    --company-link-color: #091446;
+    --company-link-visited-color: #460699;
+    --company-link-hover-color: #5ca2ff;
+    color-scheme: light;
 }
 
 /* The whole page: default typography, background, text color, and line spacing. */
@@ -19,9 +35,70 @@ body {
 
 /* The top banner containing the logo and navigation. */
 header {
+    position: relative;
     padding: 0.75rem 1rem;
     background: var(--secondary-bg);
     text-align: center;
+}
+
+/* Theme control in the upper-right corner of the header. */
+.theme-toggle {
+    position: absolute;
+    top: 0.75rem;
+    right: 1rem;
+    display: grid;
+    place-items: center;
+    width: 2.75rem;
+    height: 2.75rem;
+    padding: 0.35rem;
+    border: 1px solid var(--accent-color);
+    border-radius: 0.5rem;
+    background: var(--primary-bg);
+    cursor: pointer;
+}
+
+.theme-toggle input {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+}
+
+.theme-toggle img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.theme-toggle .light-mode-icon,
+:root:has(#theme-toggle:checked) .theme-toggle .dark-mode-icon {
+    display: none;
+}
+
+:root:has(#theme-toggle:checked) .theme-toggle .light-mode-icon {
+    display: block;
+}
+
+.theme-toggle:hover,
+.theme-toggle:has(input:focus-visible) {
+    outline: 2px solid var(--accent-color);
+    outline-offset: 2px;
+}
+
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
 }
 
 /* The banner's main heading, which contains the linked logo. */
@@ -36,8 +113,8 @@ header picture {
 }
 
 /* The logo image in the banner. */
-header img {
-    width: 120px;
+.header-logo img {
+    width: 150px;
     height: auto;
     vertical-align: middle;
     transition: transform 0.2s ease;
@@ -47,6 +124,15 @@ header img {
 header .header-logo a:hover img,
 header .header-logo a:focus-visible img {
     transform: scale(1.08);
+}
+
+.header-logo .light-logo,
+:root:has(#theme-toggle:checked) .header-logo .dark-logo {
+    display: none;
+}
+
+:root:has(#theme-toggle:checked) .header-logo .light-logo {
+    display: inline;
 }
 
 /* The navigation link list below the logo. */
@@ -87,7 +173,7 @@ main > section:first-child {
     align-items: end;
     column-gap: 0.5rem;
     min-height: 15svh;
-    --tagline-image-height: 14.25svh;
+    --tagline-image-height: 11.25svh;
 }
 
 /* The introductory student tagline. */
@@ -123,8 +209,8 @@ main > section:first-child {
 /* Expand the hero and remove skill-card padding from 450px wide. */
 @media (min-width: 450px) {
     main > section:first-child {
-        min-height: 25svh;
-        --tagline-image-height: 25.75svh;
+        min-height: 20svh;
+        --tagline-image-height: 15svh;
     }
 
     .tagline {
@@ -213,8 +299,8 @@ main > section:first-child {
     }
 
     main > section:first-child {
-        min-height: 35svh;
-        --tagline-image-height: 33.25svh;
+        min-height: 25svh;
+        --tagline-image-height: 18.75svh;
     }
 
     .tagline {
@@ -228,8 +314,8 @@ main > section:first-child {
 /* Give the opening hero area and tagline more space on wide screens. */
 @media (min-width: 1000px) {
     main > section:first-child {
-        min-height: 50svh;
-        --tagline-image-height: 47.5svh;
+        min-height: 32svh;
+        --tagline-image-height: 24svh;
     }
 
     .tagline {
@@ -357,15 +443,15 @@ footer p {
 
 /* Change color of links to companies */
 .company-link {
-    color: #1eaaeb;
+    color: var(--company-link-color);
 }
 /* Change color of links to companies after they have been visited */
 .company-link:visited {
-    color: #007ab3;
+    color: var(--company-link-visited-color);
 }
 
 /* Change color of links to companies while hovering*/
 .company-link:hover,
 .company-link:focus-visible {
-    color: #99faff;
+    color: var(--company-link-hover-color);
 }
